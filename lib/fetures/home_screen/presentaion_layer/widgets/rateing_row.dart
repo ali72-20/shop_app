@@ -2,14 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RateingRow extends StatelessWidget {
-  const RateingRow({super.key});
-
+   RateingRow({super.key,required this.rate});
+  String rate;
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return  Row(
       children: [
-        Text('Review  (4.6)'),
-        Icon(
+        Text('Review  ($rate)'),
+        const Icon(
           Icons.star_rounded,
           color: Colors.yellow,
         ),

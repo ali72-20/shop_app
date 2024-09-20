@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/fetures/home_screen/data_layer/models/product_model.dart';
 import 'package:shop_app/fetures/home_screen/presentaion_layer/widgets/rateing_row.dart';
 
 class ProductInformation extends StatelessWidget {
-  const ProductInformation({super.key});
-
+   ProductInformation({super.key, required this.product});
+   ProductModel product;
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return  Padding(
       padding: EdgeInsets.symmetric(horizontal: 8, vertical:8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Title here",
+            product.title,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
-          Text("EGP  1,200"),
+          Text("EGP  ${product.price}"),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              RateingRow(),
-              Icon(Icons.add_circle_rounded, color: Color(0xff1c4087),)
+              RateingRow(rate: product.rating,),
+              const Icon(Icons.add_circle_rounded, color: Color(0xff1c4087),)
             ],
           )
         ],
@@ -29,3 +30,4 @@ class ProductInformation extends StatelessWidget {
     );
   }
 }
+

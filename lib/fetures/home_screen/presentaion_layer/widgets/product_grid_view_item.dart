@@ -22,7 +22,7 @@ class ProductGridViewItem extends StatelessWidget {
       child:  Column(
         children: [
           ProductItemImage(image: product.image,),
-          ProductInformation(),
+          ProductInformation(product: product,),
         ],
       ),
     );
