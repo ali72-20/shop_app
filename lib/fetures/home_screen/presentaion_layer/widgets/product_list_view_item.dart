@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:shop_app/core/assets.dart';
 
 class ProductListViewItem extends StatelessWidget {
@@ -10,6 +11,16 @@ class ProductListViewItem extends StatelessWidget {
       decoration:  BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(12)),
         border: Border.all(color: kItemBorderColor),
+      ),
+      child: Column(
+        children: [
+           Stack(
+            children: [
+              const Icon(Icons.favorite_outline_sharp, color: favoriteIconColor,),
+              Image.asset(kTestImage),
+            ],
+          )
+        ],
       ),
     );
   }
