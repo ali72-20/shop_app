@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import '../../../../core/assets.dart';
 
 class ProductItemImage extends StatelessWidget {
-  const ProductItemImage({super.key});
-
+   ProductItemImage({super.key, required this.image});
+  String image;
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset(kTestImage),
+        Image.network(image),
         Positioned(
           right: 0,
           child: Container(

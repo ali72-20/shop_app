@@ -7,10 +7,10 @@ import 'package:shop_app/fetures/home_screen/data_layer/models/product_model.dar
 
 class GetProductCubit extends Cubit<GetProductState>{
   GetProductCubit():super(ProductsLoading());
-
+  static List<ProductModel>? products = [];
   getProducts() async{
     try{
-      List<ProductModel>? product = await ProductApi(Dio()).getProducts();
+       products = await ProductApi(Dio()).getProducts();
       emit(ProductsLoaded());
     }catch(e){
       emit(ProductsFailed());

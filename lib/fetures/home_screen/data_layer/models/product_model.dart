@@ -1,11 +1,11 @@
 class ProductModel {
-  int id;
-  String title;
-  String description;
-  double price;
-  String category;
-  String image;
-  String rating;
+  final int id;
+  final String title;
+  final String description;
+  final double price;
+  final String category;
+  final String image;
+  final String rating;
 
   ProductModel({required this.id,
     required this.title,

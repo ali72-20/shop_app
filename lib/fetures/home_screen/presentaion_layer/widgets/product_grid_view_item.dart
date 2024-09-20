@@ -5,10 +5,12 @@ import 'package:shop_app/core/assets.dart';
 import 'package:shop_app/fetures/home_screen/presentaion_layer/widgets/Product_item_image.dart';
 import 'package:shop_app/fetures/home_screen/presentaion_layer/widgets/product_information.dart';
 
+import '../../data_layer/models/product_model.dart';
+
 
 class ProductGridViewItem extends StatelessWidget {
-  const ProductGridViewItem({super.key});
-
+   ProductGridViewItem({super.key, required this.product});
+   ProductModel product;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,9 +19,9 @@ class ProductGridViewItem extends StatelessWidget {
         borderRadius: const BorderRadius.all(Radius.circular(12)),
         border: Border.all(color: kItemBorderColor),
       ),
-      child: const Column(
+      child:  Column(
         children: [
-          ProductItemImage(),
+          ProductItemImage(image: product.image,),
           ProductInformation(),
         ],
       ),
