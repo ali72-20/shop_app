@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/core/assets.dart';
 import 'package:shop_app/fetures/home_screen/presentaion_layer/widgets/Product_item_image.dart';
 
-class ProductListViewItem extends StatelessWidget {
-  const ProductListViewItem({super.key});
+class ProductGridViewItem extends StatelessWidget {
+  const ProductGridViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 10,
+      margin: const EdgeInsets.all(8),
       decoration:  BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(12)),
         border: Border.all(color: kItemBorderColor),
