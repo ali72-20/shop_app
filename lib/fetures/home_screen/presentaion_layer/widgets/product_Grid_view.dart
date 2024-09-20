@@ -11,7 +11,7 @@ class ProductListView extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
            maxCrossAxisExtent: 200,
-           childAspectRatio: 1 / 1.5,
+           childAspectRatio: 1 / 1.41,
            crossAxisSpacing: 20,
           mainAxisSpacing: 20
         ),
