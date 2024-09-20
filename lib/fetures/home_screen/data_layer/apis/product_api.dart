@@ -10,7 +10,6 @@ class ProductApi{
    Future<List<ProductModel>?> getProducts() async{
      try{
          Response response = await dio.get(api);
-         log("response ${response.data}");
          List<ProductModel>? products = [];
          for(dynamic item in response.data){
             products.add(ProductModel.fromJson(item));
