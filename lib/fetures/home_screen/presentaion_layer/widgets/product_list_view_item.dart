@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_app/core/assets.dart';
+import 'package:shop_app/fetures/home_screen/presentaion_layer/widgets/Product_item_image.dart';
 
 class ProductListViewItem extends StatelessWidget {
   const ProductListViewItem({super.key});
@@ -8,18 +9,14 @@ class ProductListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 10,
       decoration:  BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(12)),
         border: Border.all(color: kItemBorderColor),
       ),
-      child: Column(
+      child: const Column(
         children: [
-           Stack(
-            children: [
-              const Icon(Icons.favorite_outline_sharp, color: favoriteIconColor,),
-              Image.asset(kTestImage),
-            ],
-          )
+            ProductItemImage(),
         ],
       ),
     );
