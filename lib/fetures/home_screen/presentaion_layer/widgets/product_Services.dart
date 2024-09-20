@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:shop_app/fetures/home_screen/data_layer/apis/product_api.dart';
 import 'package:shop_app/fetures/home_screen/data_layer/models/product_model.dart';
 import '../home_screen.dart';
@@ -36,7 +37,7 @@ class _ProductServicesState extends State<ProductServices> {
         }else if(snapshot.hasError){
           return const Center(child: Text("Something wrong"));
         }else{
-          return const Center(child: Text("error"));
+          return const Center(child: CircularProgressIndicator(),);
         }
       },
     );
