@@ -8,7 +8,7 @@ class RateingRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Row(
       children: [
-        Text('Review  ($rate)'),
+        Text('Review ($rate)'),
         const Icon(
           Icons.star_rounded,
           color: Colors.yellow,
