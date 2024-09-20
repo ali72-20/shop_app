@@ -1,6 +1,6 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/cubits%20/get_product_cubit.dart';
+import 'package:shop_app/fetures/home_screen/data_layer/apis/product_api.dart';
 import 'package:shop_app/fetures/home_screen/data_layer/models/product_model.dart';
 import '../home_screen.dart';
 
@@ -12,24 +12,31 @@ class ProductServices extends StatefulWidget {
 }
 
 class _ProductServicesState extends State<ProductServices> {
-  var futur;
+  var future;
+  PageController pageController = PageController();
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    futur = BlocProvider.of<GetProductCubit>(context).getProducts();
+    future = ProductApi(Dio()).getProducts();
+  }
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    pageController.dispose();
   }
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<ProductModel>?>(
-      future: futur,
-      builder: (BuildContext,snapshot){
+      future: future,
+      builder: (context,snapshot){
         if(snapshot.hasData){
-          return const HomeScreen();
+          return  HomeScreen(products:snapshot.data!,);
         }else if(snapshot.hasError){
-          return const Text("Something wrong");
+          return const Center(child: Text("Something wrong"));
         }else{
-          return const Text("error");
+          return const Center(child: Text("error"));
         }
       },
     );

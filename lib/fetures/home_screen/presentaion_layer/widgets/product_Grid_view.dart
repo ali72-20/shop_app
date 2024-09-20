@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
-import 'package:shop_app/cubits%20/get_product_cubit.dart';
 import 'package:shop_app/fetures/home_screen/presentaion_layer/widgets/product_grid_view_item.dart';
+
+import '../../data_layer/models/product_model.dart';
 
 
 class ProductListView extends StatelessWidget {
-   const ProductListView({super.key});
+    ProductListView({super.key, required this.products});
+   List<ProductModel> products;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -18,7 +20,7 @@ class ProductListView extends StatelessWidget {
         ),
         itemCount: 20,
         itemBuilder: (context,index){
-          return  ProductGridViewItem(product: GetProductCubit.products![index]);
+          return  ProductGridViewItem(product: products[index]);
         },
       ),
     );

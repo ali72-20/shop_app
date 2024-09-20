@@ -11,7 +11,7 @@ class ProductApi{
      try{
          Response response = await dio.get(api);
          log("response ${response.data}");
-         List<ProductModel> products = [];
+         List<ProductModel>? products = [];
          for(dynamic item in response.data){
             products.add(ProductModel.fromJson(item));
          }
@@ -23,7 +23,7 @@ class ProductApi{
 
        log('Error data: ${e.response?.data}');
      } catch(e){
-       log("some thing went wrong: $e");
+       log("some thing went wrong in api: $e");
      }
    }
 }

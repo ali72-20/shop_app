@@ -2,13 +2,23 @@ import 'package:flutter/material.dart';
 import '../../../../core/assets.dart';
 
 class ProductItemImage extends StatelessWidget {
-   ProductItemImage({super.key, required this.image});
+  ProductItemImage({super.key, required this.image});
+
   String image;
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.network(image),
+        Container(
+          height: 175,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.fill,
+              image: NetworkImage(image)
+            )
+          ),
+        ),
         Positioned(
           right: 0,
           child: Container(

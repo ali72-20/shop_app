@@ -1,8 +1,8 @@
 class ProductModel {
-  final int id;
+  final String id;
   final String title;
   final String description;
-  final double price;
+  final String price;
   final String category;
   final String image;
   final String rating;
@@ -18,13 +18,13 @@ class ProductModel {
 
   factory ProductModel.fromJson(json){
     return ProductModel(
-      id: json["id"],
+      id: json["id"].toString(),
       title: json["title"],
-      price: json["price"],
+      price: json["price"].toString(),
       description: json["description"],
       image: json['image'],
       category: json['category'],
-      rating: json['rating']['rate']
+      rating:json['rating']['rate'].toString()
     );
   }
 }
