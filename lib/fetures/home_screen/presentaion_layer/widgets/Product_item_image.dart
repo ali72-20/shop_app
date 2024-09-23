@@ -26,7 +26,7 @@ class _ProductItemImageState extends State<ProductItemImage> {
     return Stack(
       children: [
         Container(
-          height: 210,
+          height: 160,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: NetworkImage(widget.image,)
