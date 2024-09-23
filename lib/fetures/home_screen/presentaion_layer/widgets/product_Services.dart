@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:shop_app/fetures/home_screen/data_layer/apis/product_api.dart';
 import 'package:shop_app/fetures/home_screen/data_layer/models/product_model.dart';
 import '../home_screen.dart';
@@ -15,29 +17,36 @@ class ProductServices extends StatefulWidget {
 class _ProductServicesState extends State<ProductServices> {
   var future;
   PageController pageController = PageController();
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     future = ProductApi(Dio()).getProducts();
   }
+
   @override
   void dispose() {
     // TODO: implement dispose
     super.dispose();
     pageController.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<ProductModel>?>(
       future: future,
-      builder: (context,snapshot){
-        if(snapshot.hasData){
-          return  HomeScreen(products:snapshot.data!,);
-        }else if(snapshot.hasError){
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return HomeScreen(
+            products: snapshot.data!,
+          );
+        } else if (snapshot.hasError) {
           return const Center(child: Text("Something wrong"));
-        }else{
-          return const Center(child: CircularProgressIndicator(),);
+        } else {
+          return Center(
+              child: LoadingAnimationWidget.dotsTriangle(
+                  color: Colors.blueAccent, size: 100));
         }
       },
     );

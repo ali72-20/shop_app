@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../core/assets.dart';
 
 class ProductItemImage extends StatefulWidget {
   ProductItemImage({super.key, required this.image});
 
   String image;
-  Icon favouriteDeActive  = const Icon(Icons.favorite_outline_sharp,color: favoriteIconColor);
-  Icon favouriteActive  = const Icon(Icons.favorite,color: Colors.red);
+  Icon favouriteDeActive  = const Icon(FontAwesomeIcons.heart,color: favoriteIconColor);
+  Icon favouriteActive  = const Icon(FontAwesomeIcons.heart,color: Colors.red);
   @override
   State<ProductItemImage> createState() => _ProductItemImageState();
 }
@@ -25,11 +26,10 @@ class _ProductItemImageState extends State<ProductItemImage> {
     return Stack(
       children: [
         Container(
-          height: 175,
+          height: 210,
           decoration: BoxDecoration(
             image: DecorationImage(
-              fit: BoxFit.fill,
-              image: NetworkImage(widget.image)
+              image: NetworkImage(widget.image,)
             )
           ),
         ),
@@ -48,8 +48,6 @@ class _ProductItemImageState extends State<ProductItemImage> {
 
               },
               child: favourite,
-
-
             ),
           ),
         ),

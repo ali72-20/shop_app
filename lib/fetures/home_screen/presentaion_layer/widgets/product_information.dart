@@ -22,7 +22,7 @@ class ProductInformation extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               RateingRow(rate: product.rating,),
-              const Icon(Icons.add_circle_rounded, color: Color(0xff1c4087),)
+              const Icon(Icons.add_circle_rounded, color: Color(0xff1c4087),size: 28,)
             ],
           )
         ],

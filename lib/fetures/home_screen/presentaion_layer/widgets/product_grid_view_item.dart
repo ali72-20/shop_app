@@ -16,7 +16,7 @@ class ProductGridViewItem extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(12)),
+       borderRadius: BorderRadius.circular(12),
         border: Border.all(color: kItemBorderColor),
       ),
       child:  Column(

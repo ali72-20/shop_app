@@ -11,7 +11,7 @@ class RateingRow extends StatelessWidget {
         Text('Review ($rate)'),
         const Icon(
           Icons.star_rounded,
-          color: Colors.yellow,
+          color: Colors.orangeAccent,
         ),
       ],
     );

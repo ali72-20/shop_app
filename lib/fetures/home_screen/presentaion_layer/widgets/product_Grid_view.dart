@@ -15,10 +15,10 @@ class ProductListView extends StatelessWidget {
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
            maxCrossAxisExtent: 200,
            childAspectRatio: 1 / 1.7,
-           crossAxisSpacing: 20,
+           crossAxisSpacing: 6,
           mainAxisSpacing: 20
         ),
-        itemCount: 20,
+        itemCount: products.length,
         itemBuilder: (context,index){
           return  ProductGridViewItem(product: products[index]);
         },
